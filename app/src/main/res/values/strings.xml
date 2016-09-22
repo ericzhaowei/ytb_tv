@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">ytb_tv</string>
+    <string name="browse_title"><![CDATA[Videos by Your Company]]></string>
+    <string name="related_movies">Related Videos</string>
+    <string name="vertical_grid_title"><![CDATA[Vertical Video Grid]]></string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="init_text">00:00</string>
+    <string name="play_pause_description">Play Pause Button</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="no_video_found">No video was found</string>
+    <string name="about_app">About DemoCast Player</string>
+    <string name="version">Version: %1$s</string>
+    <string name="popular_header">Popular Videos</string>
+    <string name="preferences">PREFERENCES</string>
+    <string name="grid_view">Grid View</string>
+    <string name="error_fragment">Error Fragment</string>
+    <string name="personal_settings">Personal Settings</string>
+    <string name="watch_1">Watch</string>
+    <string name="watch_2">FREE</string>
+    <string name="description_1">Description</string>
+    <string name="favorite_1">Favorite</string>
+    <string name="remove_favorite">Remove Favorite</string>
+    <string name="movie">Movie</string>
+    <string name="should_start">shouldStart</string>
+    <string name="start_position">startPosition</string>
+    <string name="search_bar_title">Videos and Applications here</string>
+    <string name="search_results">Search Results</string>
+    <string name="search_history">Search History</string>
+    <string name="search_history_clear">Clear History</string>
+    <string name="search_results_playlist">PlayLists for %s</string>
+    <string name="search_results_videos">Videos for %s</string>
+    <string name="search_results_apps">Applications for %s</string>
+    <string name="videos_in_playlist">Videos in [%s]</string>
+    <string name="m_app_version_format">Version:%s</string>
+    <string name="m_app_not_found_title">No result for \"%s\"</string>
+    <string name="m_app_not_found_message">Search in GooglePlay</string>
+    <string name="m_app_more_result_title">Search more \"%s\"</string>
+    <string name="m_app_action_launch">Launch</string>
+    <string name="m_app_action_clear">Clear Data</string>
+    <string name="m_app_action_uninstall">Uninstall</string>
+    <string name="m_app_action_favorite">Favorite</string>
+    <string name="Data_cleared">Data has been cleared.</string>
+
+    <!-- Error messages -->
+    <string name="video_error_media_load_timeout">Media loading timed out</string>
+    <string name="video_error_server_inaccessible">Media server was not reachable</string>
+    <string name="video_error_unknown_error">Failed to load video</string>
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+    <string name="oops">Oops</string>
+
+    <string name="add">Add</string>
+
+    <string-array name="header_category_array">
+        <item>Popular</item>
+        <item>Editor\'s</item>
+        <item>Fav Videos</item>
+        <item>Fav Apps</item>
+        <item>Applications</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string-array name="header_category_icon_array">
+        <item>&#xe602;</item>
+        <item>&#xe600;</item>
+        <item>&#xe605;</item>
+        <item>&#xe603;</item>
+        <item>&#xe604;</item>
+        <item>&#xe601;</item>
+    </string-array>
+
+</resources>
