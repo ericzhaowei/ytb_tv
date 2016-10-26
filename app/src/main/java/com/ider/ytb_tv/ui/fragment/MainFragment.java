@@ -77,6 +77,7 @@ import com.ider.ytb_tv.utils.FastBlur;
 import com.ider.ytb_tv.utils.JsonParser;
 import com.ider.ytb_tv.utils.NetworkUtil;
 import com.ider.ytb_tv.utils.PreferenceManager;
+import com.ider.ytb_tv.utils.PropertyReader;
 import com.ider.ytb_tv.utils.Utils;
 
 import java.lang.ref.WeakReference;
@@ -427,8 +428,10 @@ public class MainFragment extends BrowseFragment {
     }
 
     private void setupUIElements() {
-        setBadgeDrawable(getResources().getDrawable(R.mipmap.freeclick));
-
+        boolean logoEnable = Boolean.parseBoolean(PropertyReader.getString(getActivity(), "ro.logo.enable"));
+        if(logoEnable) {
+            setBadgeDrawable(getResources().getDrawable(R.mipmap.freeclick));
+        }
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.selected_background));

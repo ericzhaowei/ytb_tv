@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.provider.Settings;
+import android.util.Log;
 
 import com.ider.ytb_tv.ui.fragment.MySearchFragment;
 import com.ider.ytb_tv.utils.JsonParser;
@@ -24,8 +25,9 @@ public class CustService extends Service {
 
     private String TAG = "CustService";
 
-
-    private static final String ID_YTB_IDER_CAHNNEL = "UCRD2n56QwpiI02MNigUpQFA";
+    private static String ID_YTB_IDER_CAHNNEL;
+    private static final String ID_CHANNEL_TEST = "UCRD2n56QwpiI02MNigUpQFA";
+    private static final String ID_CHANNEL_AMAZON = "UCkYyfZZsEsUlvKmTcciei3A";
     public static final String ID_YTB_KEY = "AIzaSyCMIntoeYd4PzFdLBZUrBgQjVbIeH1-wI0";
     private static String PAGER_TOKEN_STR = "&pageToken=%s";
     private static String YTB_API_BASE = "https://www.googleapis.com/youtube/v3/";
@@ -61,6 +63,8 @@ public class CustService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        String regionFor = PropertyReader.getString(this, "ro.region.to");
+        ID_YTB_IDER_CAHNNEL = regionFor.equals("amazon") ? ID_CHANNEL_AMAZON : ID_CHANNEL_TEST;
     }
 
     @Override
@@ -79,8 +83,11 @@ public class CustService extends Service {
     public String getPopular(String pageId) {
         String pageToken;
         String region = PropertyReader.getString(this, "ro.product.locale.region");
+        region = region.equals("") ? "us" : region;
+        Utils.log("region", "地区：" + region);
         pageToken = pageId == null ? "" : String.format(PAGER_TOKEN_STR, pageId);
         String popularUrl = createPopularUrl(pageToken, region, ID_YTB_KEY);
+
         try {
             return OkhttpManager.getInstance().sendGet(popularUrl);
         } catch (IOException e) {
@@ -191,6 +198,7 @@ public class CustService extends Service {
 
     private String getPlaylistInfo() throws IOException {
         String url = String.format(YTB_PLAYLIST_URL, ID_YTB_IDER_CAHNNEL, ID_YTB_KEY);
+        Log.i("tag", url);
         return OkhttpManager.getInstance().sendGet(url);
     }
 

@@ -27,7 +27,7 @@ import com.ider.ytb_tv.ui.activity.PlaybackOverlayActivity;
  * A collection of utility methods, all static.
  */
 public class Utils {
-    private static boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     public static void log(String tag, String log) {
         if(DEBUG)
             Log.i(tag, log);
